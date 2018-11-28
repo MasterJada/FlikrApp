@@ -35,6 +35,7 @@ class MainPresenter(m: MainModel) {
                 model.page = it.photos.page
                 activity.loaded()
             }, {
+                activity.showError(it.message)
                 activity.hideKeyboard()
             })
         }
@@ -48,7 +49,7 @@ class MainPresenter(m: MainModel) {
                 activity.makeClearButton()
                 model.page = it.photos.page
             }, {
-
+                activity.showError(it.message)
             })
         }
     }

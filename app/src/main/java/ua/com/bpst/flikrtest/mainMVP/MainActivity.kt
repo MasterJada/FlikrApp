@@ -15,6 +15,7 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.inputmethod.EditorInfo
 import android.widget.ArrayAdapter
 import android.widget.ImageButton
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import ua.com.bpst.flikrtest.*
 import ua.com.bpst.flikrtest.adapters.ImageAdapter
@@ -124,6 +125,10 @@ class MainActivity : AppCompatActivity() {
             adapter.resetSearch()
             makeSearchButton()
         }
+    }
+
+    fun showError(msg: String?){
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroy() {

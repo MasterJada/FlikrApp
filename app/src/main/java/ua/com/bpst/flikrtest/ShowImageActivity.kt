@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewTreeObserver
+import android.widget.Toast
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_show_image.*
@@ -23,7 +24,7 @@ class ShowImageActivity : AppCompatActivity() {
                 }
 
                 override fun onError() {
-
+                showError("Loading photo error")
                 }
 
             })
@@ -40,6 +41,9 @@ class ShowImageActivity : AppCompatActivity() {
         )
     }
 
+    fun showError(msg: String?){
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
     private fun scheduleStartPostponedTransition(sharedElement: View) {
         sharedElement.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
             override fun onPreDraw(): Boolean {
