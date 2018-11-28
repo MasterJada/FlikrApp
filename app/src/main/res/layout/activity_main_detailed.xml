@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/root"
-        tools:context=".MainActivity" android:background="#202022">
+        tools:context=".mainMVP.MainActivity" android:background="#202022">
 
     <MultiAutoCompleteTextView
             android:layout_width="0dp"

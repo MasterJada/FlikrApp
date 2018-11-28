@@ -1,4 +1,4 @@
-package ua.com.bpst.flikrtest
+package ua.com.bpst.flikrtest.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import ua.com.bpst.flikrtest.model.ImagesResult
+import ua.com.bpst.flikrtest.R
+import ua.com.bpst.flikrtest.loadFromUrl
 
 class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageVH>() {
     private val items = ArrayList<ImagesResult.Photos.Photo>()

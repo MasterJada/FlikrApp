@@ -1,6 +1,5 @@
 package ua.com.bpst.flikrtest.mainMVP
 
-import ua.com.bpst.flikrtest.MainActivity
 import ua.com.bpst.flikrtest.hideKeyboard
 
 

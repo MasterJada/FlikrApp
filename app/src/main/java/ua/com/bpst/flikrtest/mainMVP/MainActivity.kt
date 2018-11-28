@@ -1,4 +1,4 @@
-package ua.com.bpst.flikrtest
+package ua.com.bpst.flikrtest.mainMVP
 
 import android.app.ActivityOptions
 
@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.constraint.ConstraintSet
 import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.transition.ChangeBounds
 import android.transition.TransitionManager
 import android.view.animation.AccelerateDecelerateInterpolator
@@ -17,9 +16,9 @@ import android.view.inputmethod.EditorInfo
 import android.widget.ArrayAdapter
 import android.widget.ImageButton
 import kotlinx.android.synthetic.main.activity_main.*
+import ua.com.bpst.flikrtest.*
+import ua.com.bpst.flikrtest.adapters.ImageAdapter
 import ua.com.bpst.flikrtest.helpers.PaginationHelper
-import ua.com.bpst.flikrtest.mainMVP.MainModel
-import ua.com.bpst.flikrtest.mainMVP.MainPresenter
 
 class MainActivity : AppCompatActivity() {
 

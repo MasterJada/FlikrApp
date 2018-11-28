@@ -1,14 +1,13 @@
 package ua.com.bpst.flikrtest.helpers
 
 import io.reactivex.Observable
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-import ua.com.bpst.flikrtest.ImagesResult
+import ua.com.bpst.flikrtest.model.ImagesResult
 
 
 interface ApiHelper {

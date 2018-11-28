@@ -28,7 +28,6 @@ class ShowImageActivity : AppCompatActivity() {
 
             })
 
-
         contentView?.setOnTouchListener(SwipeHelper().setupCallbacks(swipeUp = { diff ->
             iv_image.translationY = diff
         }, swipeDown = {diff ->

@@ -1,4 +1,4 @@
-package ua.com.bpst.flikrtest
+package ua.com.bpst.flikrtest.model
 import com.google.gson.annotations.SerializedName
 
 
