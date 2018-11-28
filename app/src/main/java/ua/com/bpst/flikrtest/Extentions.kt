@@ -33,9 +33,8 @@ fun Activity.hideKeyboard() {
 }
 
 fun Activity.showKeyboard() {
-    (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.let {
-        it.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, 0)
-    }
+    (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.
+        toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, 0)
 
 }
 

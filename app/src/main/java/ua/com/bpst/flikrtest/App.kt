@@ -10,5 +10,6 @@ class App: Application() {
         Realm.init(this)
         val config = RealmConfiguration.Builder().deleteRealmIfMigrationNeeded().build()
         Realm.setDefaultConfiguration(config)
+
     }
 }

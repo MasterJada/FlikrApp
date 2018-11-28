@@ -22,6 +22,13 @@ class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageVH>() {
     }
 
     fun addItems(items: List<ImagesResult.Photos.Photo>) {
+        val from = this.items.size - 1
+        this.items += items
+        notifyItemRangeChanged(from, items.size)
+    }
+
+    fun setItems(items: List<ImagesResult.Photos.Photo>){
+        this.items.clear()
         this.items += items
         notifyDataSetChanged()
     }
