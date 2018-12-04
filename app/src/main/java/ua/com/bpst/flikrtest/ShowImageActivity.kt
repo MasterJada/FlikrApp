@@ -24,26 +24,31 @@ class ShowImageActivity : AppCompatActivity() {
                 }
 
                 override fun onError() {
-                showError("Loading photo error")
+                    showError("Loading photo error")
                 }
 
             })
 
-        contentView?.setOnTouchListener(SwipeHelper().setupCallbacks(swipeUp = { diff ->
-            iv_image.translationY = diff
-        }, swipeDown = {diff ->
-            iv_image.translationY = diff
-        }, swipeEnd = {
-            finishAfterTransition()
-        }, cancelSwipe = {
-            iv_image.animate().translationY(0F).setDuration(100).start()
-            })
-        )
+        contentView?.setOnTouchListener(SwipeHelper().setupCallback { diff, state ->
+            when(state){
+                SwipeHelper.SwipeState.UP, SwipeHelper.SwipeState.DOWN -> {
+                    iv_image.translationY = diff ?: 0F
+                }
+                SwipeHelper.SwipeState.END ->{
+                    finishAfterTransition()
+                }
+                SwipeHelper.SwipeState.CANCEL ->{
+                    iv_image.animate().translationY(0F).setDuration(100).start()
+                }
+
+            }
+        })
     }
 
-    fun showError(msg: String?){
+    fun showError(msg: String?) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
+
     private fun scheduleStartPostponedTransition(sharedElement: View) {
         sharedElement.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
             override fun onPreDraw(): Boolean {
