@@ -25,13 +25,13 @@ import ua.com.bpst.flikrtest.*
 import ua.com.bpst.flikrtest.adapters.ImageAdapter
 import ua.com.bpst.flikrtest.helpers.PaginationHelper
 
-class MainActivity : AppCompatActivity(), KodeinAware {
+class MainActivity : AppCompatActivity() {
 
 
     val adapter = ImageAdapter()
     private lateinit var autocompleteAdapter: ArrayAdapter<String>
 
-    override val kodein: Kodein by lazy { (applicationContext as KodeinAware).kodein }
+
     private val presenter: MainPresenter = kodein.instance()
 
 

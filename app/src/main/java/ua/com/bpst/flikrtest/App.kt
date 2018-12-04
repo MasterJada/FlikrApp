@@ -8,14 +8,14 @@ import io.realm.RealmConfiguration
 import ua.com.bpst.flikrtest.dependencies.apiModule
 import ua.com.bpst.flikrtest.mainMVP.MainModel
 import ua.com.bpst.flikrtest.mainMVP.MainPresenter
+ val kodein = Kodein {
+    import(apiModule)
+    bind<MainModel>() with provider { MainModel() }
+    bind<MainPresenter>() with provider { MainPresenter(instance()) }
 
-class App: Application(), KodeinAware {
-    override val kodein = Kodein {
-        import(autoAndroidModule(this@App))
-        import(apiModule)
-        bind<MainModel>() with provider { MainModel() }
-        bind<MainPresenter>() with provider { MainPresenter(instance()) }
-    }
+}
+class App: Application() {
+
 
     override fun onCreate() {
         super.onCreate()
