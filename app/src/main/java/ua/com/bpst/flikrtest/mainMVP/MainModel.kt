@@ -1,6 +1,7 @@
 package ua.com.bpst.flikrtest.mainMVP
 
 
+
 import io.realm.Realm
 import io.realm.kotlin.where
 import ua.com.bpst.flikrtest.model.ImagesResult
@@ -10,6 +11,7 @@ import ua.com.bpst.flikrtest.send
 
 class MainModel {
     var page = 0
+
     fun loadAutocomplete(): ArrayList<String>{
         val autoComplete = ArrayList<String>()
         Realm.getDefaultInstance().use { realm ->

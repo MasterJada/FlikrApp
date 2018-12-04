@@ -16,19 +16,24 @@ import android.view.inputmethod.EditorInfo
 import android.widget.ArrayAdapter
 import android.widget.ImageButton
 import android.widget.Toast
+import com.github.salomonbrys.kodein.Kodein
+import com.github.salomonbrys.kodein.KodeinAware
+import com.github.salomonbrys.kodein.android.appKodein
+import com.github.salomonbrys.kodein.instance
 import kotlinx.android.synthetic.main.activity_main.*
 import ua.com.bpst.flikrtest.*
 import ua.com.bpst.flikrtest.adapters.ImageAdapter
 import ua.com.bpst.flikrtest.helpers.PaginationHelper
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), KodeinAware {
 
 
     val adapter = ImageAdapter()
     private lateinit var autocompleteAdapter: ArrayAdapter<String>
-    private val presenter: MainPresenter by lazy {
-        MainPresenter(MainModel())
-    }
+
+    override val kodein: Kodein by lazy { (applicationContext as KodeinAware).kodein }
+    private val presenter: MainPresenter = kodein.instance()
+
 
     var onRequest = false
         set(value) {
